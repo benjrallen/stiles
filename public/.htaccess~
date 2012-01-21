@@ -1,0 +1,25 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# ----------------------------------------------------------------------
+# Cross-domain AJAX requests
+# ----------------------------------------------------------------------
+
+# Serve cross-domain ajax requests, disabled.   
+# enable-cors.org
+# code.google.com/p/html5security/wiki/CrossOriginRequestSecurity
+
+<IfModule mod_headers.c>
+#  Header set Access-Control-Allow-Origin "http://benjrallen.com"
+  Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+# BEGIN WordPress
+
+# END WordPress
